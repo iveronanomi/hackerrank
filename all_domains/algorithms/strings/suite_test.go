@@ -13,8 +13,12 @@ func captureStdout(f func(), str ...string) string {
 	oldStdout := os.Stdout
 	oldStdin := os.Stdin
 	r, w, _ := os.Pipe()
+	//r.Chmod(os.ModeNamedPipe)
 	for _, s := range str {
-		os.Stdin.Read([]byte(s))
+		_, err := r.WriteString(s)
+		if err != nil {
+			panic(err)
+		}
 	}
 	os.Stdout = w
 	os.Stdin = r
