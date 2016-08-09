@@ -11,23 +11,13 @@ import (
 
 func captureStdout(f func(), str ...string) string {
 	oldStdout := os.Stdout
-	oldStdin := os.Stdin
 	r, w, _ := os.Pipe()
-	//r.Chmod(os.ModeNamedPipe)
-	for _, s := range str {
-		_, err := r.WriteString(s)
-		if err != nil {
-			panic(err)
-		}
-	}
 	os.Stdout = w
-	os.Stdin = r
 
 	f()
 
 	w.Close()
 	os.Stdout = oldStdout
-	os.Stdin = oldStdin
 	var buf bytes.Buffer
 	io.Copy(&buf, r)
 	return buf.String()
