@@ -1,8 +1,11 @@
 package strings
 
 import (
-	. "gopkg.in/check.v1"
 	"os"
+
+	. "gopkg.in/check.v1"
+
+	"github.com/ereminIvan/hackerrank/utils"
 )
 
 type CamelCaseSuite struct{}
@@ -10,8 +13,8 @@ type CamelCaseSuite struct{}
 var _ = Suite(&CamelCaseSuite{})
 
 func (s *CamelCaseSuite) TestCase1(c *C) {
-	out := captureStdout(func() {
-		in := writeInput("saveChangesInTheEditor")
+	out := utils.CaptureStdout(func() {
+		in := utils.WriteInput("saveChangesInTheEditor")
 		defer in.Close()
 		CamelCase(func() *os.File {
 			return in

@@ -2,10 +2,11 @@ package strings
 
 import (
 	"fmt"
-	"os"
+
+	"github.com/ereminIvan/hackerrank/utils"
 )
 
-func MarsExploration(getInput func() *os.File) {
+func MarsExploration(getInput utils.GetInput) {
 	var d int
 	var inputString string
 	input := getInput()

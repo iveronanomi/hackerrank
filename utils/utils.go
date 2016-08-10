@@ -7,6 +7,8 @@ import (
 	"os"
 )
 
+type GetInput func() *os.File
+
 func CaptureStdout(f func()) string {
 	oldStdout := os.Stdout
 	r, w, _ := os.Pipe()

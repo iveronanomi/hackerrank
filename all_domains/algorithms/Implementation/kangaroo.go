@@ -1,8 +1,12 @@
-package Implementation
+package implementation
 
-import "fmt"
+import (
+	"fmt"
 
-func step(x1, v1, x2, v2 int) bool {
+	"github.com/ereminIvan/hackerrank/utils"
+)
+
+func kangarooStep(x1, v1, x2, v2 int) bool {
 	for i := 0; i <= 10000; i++ {
 		if x1 == x2 {
 			return true
@@ -13,11 +17,12 @@ func step(x1, v1, x2, v2 int) bool {
 	return false
 }
 
-func Kangaroo() {
+func Kangaroo(getInput utils.GetInput) {
 	var x1, x2, v1, v2 int
-	fmt.Scanf("%v %v", &x1, &v1)
-	fmt.Scanf("%v %v", &x2, &v2)
-	if step(x1, v1, x2, v2) {
+	input := getInput()
+	fmt.Fscanf(input, "%v %v", &x1, &v1)
+	fmt.Fscanf(input, "%v %v", &x2, &v2)
+	if kangarooStep(x1, v1, x2, v2) {
 		fmt.Println("YES")
 	} else {
 		fmt.Println("NO")

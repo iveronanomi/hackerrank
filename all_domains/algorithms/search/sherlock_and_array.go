@@ -1,17 +1,22 @@
 package search
 
-import "fmt"
+import (
+	"fmt"
+	"os"
 
-func readStdin() [][]int {
+	"github.com/ereminIvan/hackerrank/utils"
+)
+
+func readStdin(input *os.File) [][]int {
 	var tasksCount int
-	fmt.Scanf("%v", &tasksCount)
+	fmt.Fscanf(input, "%v", &tasksCount)
 	tasks := make([][]int, tasksCount)
 	for i := 0; i < tasksCount; i++ {
 		var countInCase int
-		fmt.Scanf("%v", &countInCase)
+		fmt.Fscanf(input, "%v", &countInCase)
 		tasks[i] = make([]int, countInCase)
 		for j := 0; j < countInCase; j++ {
-			fmt.Scanf("%v", &tasks[i][j])
+			fmt.Fscanf(input, "%v", &tasks[i][j])
 		}
 	}
 	return tasks
@@ -28,8 +33,9 @@ func isSumEqual(d1 []int, d2 []int) bool {
 	return s1 == s2
 }
 
-func SherlockAndArray() {
-	tasks := readStdin()
+func SherlockAndArray(getInput utils.GetInput) {
+	input := getInput()
+	tasks := readStdin(input)
 	for _, task := range tasks {
 		//We need only half of slice
 		limit := len(task)/2 + 1

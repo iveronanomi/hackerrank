@@ -2,11 +2,12 @@ package strings
 
 import (
 	"fmt"
-	"os"
 	sp "strings"
+
+	"github.com/ereminIvan/hackerrank/utils"
 )
 
-func CamelCase(getInput func() *os.File) {
+func CamelCase(getInput utils.GetInput) {
 	var inputString string
 	var count int
 	input := getInput()

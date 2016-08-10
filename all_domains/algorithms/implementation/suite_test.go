@@ -1,4 +1,4 @@
-package strings
+package implementation
 
 // File contains hook to link gocheck with Golang test system
 import (
