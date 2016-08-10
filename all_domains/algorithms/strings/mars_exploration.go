@@ -1,14 +1,17 @@
 package strings
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
-//SOSSPSSQSSOR 3 SOSSOT 1
-func MarsExploration() {
+func MarsExploration(getInput func() *os.File) {
 	var d int
-	var input string
-	fmt.Scanf("%v", &input)
-	for i := 0; len(input)/3 > i; i++ {
-		c := input[3*i : 3*i+3]
+	var inputString string
+	input := getInput()
+	fmt.Fscanf(input, "%v", &inputString)
+	for i := 0; len(inputString)/3 > i; i++ {
+		c := inputString[3*i : 3*i+3]
 		if c[0] != 83 {
 			d++
 		}

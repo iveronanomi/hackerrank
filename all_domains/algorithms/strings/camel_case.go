@@ -2,17 +2,20 @@ package strings
 
 import (
 	"fmt"
+	"os"
 	sp "strings"
 )
 
-func CamelCase () {
-	var input string
+func CamelCase(getInput func() *os.File) {
+	var inputString string
 	var count int
-	fmt.Scanf("%v", &input)
-	if len(input) > 0 {
-		count = 1;
+	input := getInput()
+
+	fmt.Fscanf(input, "%v", &inputString)
+	if len(inputString) > 0 {
+		count = 1
 	}
-	for _, cr := range input {
+	for _, cr := range inputString {
 		if string(cr) == sp.ToUpper(string(cr)) {
 			count++
 		}
