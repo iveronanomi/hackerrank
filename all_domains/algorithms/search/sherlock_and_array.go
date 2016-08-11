@@ -7,7 +7,7 @@ import (
 	"github.com/ereminIvan/hackerrank/utils"
 )
 
-func readStdin(input *os.File) [][]int {
+func readInput(input *os.File) [][]int {
 	var tasksCount int
 	fmt.Fscanf(input, "%v", &tasksCount)
 	tasks := make([][]int, tasksCount)
@@ -23,19 +23,19 @@ func readStdin(input *os.File) [][]int {
 }
 
 func isSumEqual(d1 []int, d2 []int) bool {
-	var s1, s2 int
+	var sum1, sum2 int
 	for _, v := range d1 {
-		s1 += v
+		sum1 += v
 	}
 	for _, v := range d2 {
-		s2 += v
+		sum2 += v
 	}
-	return s1 == s2
+	return sum1 == sum2
 }
 
 func SherlockAndArray(getInput utils.GetInput) {
 	input := getInput()
-	tasks := readStdin(input)
+	tasks := readInput(input)
 	for _, task := range tasks {
 		//We need only half of slice
 		limit := len(task)/2 + 1
