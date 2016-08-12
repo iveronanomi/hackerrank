@@ -2,14 +2,14 @@ package strings
 
 import (
 	"fmt"
-
-	"github.com/ereminIvan/hackerrank/utils"
+	"os"
 )
 
-func MarsExploration(getInput utils.GetInput) {
+func MarsExploration() {
 	var d int
 	var inputString string
-	input := getInput()
+	input := os.Stdin
+
 	fmt.Fscanf(input, "%v", &inputString)
 	for i := 0; len(inputString)/3 > i; i++ {
 		c := inputString[3*i : 3*i+3]

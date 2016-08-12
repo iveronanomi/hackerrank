@@ -3,8 +3,6 @@ package search
 import (
 	"fmt"
 	"os"
-
-	"github.com/ereminIvan/hackerrank/utils"
 )
 
 func readInput(input *os.File) [][]int {
@@ -33,8 +31,8 @@ func isSumEqual(d1 []int, d2 []int) bool {
 	return sum1 == sum2
 }
 
-func SherlockAndArray(getInput utils.GetInput) {
-	input := getInput()
+func SherlockAndArray() {
+	input := os.Stdin
 	tasks := readInput(input)
 	for _, task := range tasks {
 		//We need only half of slice

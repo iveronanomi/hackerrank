@@ -2,8 +2,7 @@ package thirty_days_of_code
 
 import (
 	"fmt"
-
-	"github.com/ereminIvan/hackerrank/utils"
+	"os"
 )
 
 func isWeird(d uint16) bool {
@@ -19,9 +18,10 @@ func isWeird(d uint16) bool {
 	return true
 }
 
-func Day3IntroTtoConditionalStatements(getInput utils.GetInput) {
-	input := getInput()
+func Day3IntroTtoConditionalStatements() {
 	var d uint16
+	input := os.Stdin
+
 	fmt.Fscanf(input, "%d", &d)
 	if isWeird(d) == true {
 		fmt.Print("Weird")

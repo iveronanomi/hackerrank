@@ -7,15 +7,18 @@ import (
 	"os"
 )
 
-type GetInput func() *os.File
-
-func CaptureStdout(f func()) string {
+func CaptureOut(f func(), inputData string) string {
+	//Create input, and write into it
+	in := writeInput(inputData)
+	os.Stdin = in
 	oldStdout := os.Stdout
 	r, w, _ := os.Pipe()
 	os.Stdout = w
 
+	//Execute function with passed input
 	f()
 
+	in.Close()
 	w.Close()
 	os.Stdout = oldStdout
 	var buf bytes.Buffer
@@ -23,7 +26,7 @@ func CaptureStdout(f func()) string {
 	return buf.String()
 }
 
-func WriteInput(data string) *os.File {
+func writeInput(data string) *os.File {
 	in, err := ioutil.TempFile("", "")
 	if err != nil {
 		panic(err)

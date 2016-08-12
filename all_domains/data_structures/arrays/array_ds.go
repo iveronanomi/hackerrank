@@ -2,14 +2,13 @@ package arrays
 
 import (
 	"fmt"
-
-	"github.com/ereminIvan/hackerrank/utils"
+	"os"
 	"strings"
 )
 
-func ArrayDS(getInput utils.GetInput) {
-	input := getInput()
+func ArrayDS() {
 	var length int32
+	input := os.Stdin
 	fmt.Fscanf(input, "%v", &length)
 	arr := make([]string, length)
 

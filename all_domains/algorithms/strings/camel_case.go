@@ -2,15 +2,14 @@ package strings
 
 import (
 	"fmt"
+	"os"
 	sp "strings"
-
-	"github.com/ereminIvan/hackerrank/utils"
 )
 
-func CamelCase(getInput utils.GetInput) {
+func CamelCase() {
 	var inputString string
 	var count int
-	input := getInput()
+	input := os.Stdin
 
 	fmt.Fscanf(input, "%v", &inputString)
 	if len(inputString) > 0 {

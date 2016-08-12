@@ -3,14 +3,12 @@ package week_of_code_22
 import (
 	"fmt"
 	"math"
-
-	"github.com/ereminIvan/hackerrank/utils"
+	"os"
 )
 
-func CookieParty(getInput utils.GetInput) {
+func CookieParty() {
 	var p, c, d float64
-	input := getInput()
-	fmt.Fscanf(input, "%f %f", &p, &c)
+	fmt.Fscanf(os.Stdin, "%f %f", &p, &c)
 	if p == 0 {
 		d = 0
 	} else if p > c {

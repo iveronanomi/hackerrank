@@ -2,8 +2,7 @@ package thirty_days_of_code
 
 import (
 	"fmt"
-
-	"github.com/ereminIvan/hackerrank/utils"
+	"os"
 )
 
 type person struct {
@@ -36,9 +35,10 @@ func (p person) yearPasses() person {
 	return p
 }
 
-func Day4ClassVsInstance(getInput utils.GetInput) {
-	input := getInput()
+func Day4ClassVsInstance() {
 	var T, age int
+	input := os.Stdin
+
 	fmt.Fscanf(input, "%d", &T)
 
 	for i := 0; i < T; i++ {
