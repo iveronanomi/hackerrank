@@ -2,8 +2,7 @@ package implementation
 
 import (
 	"fmt"
-
-	"github.com/ereminIvan/hackerrank/utils"
+	"os"
 )
 
 func kangarooStep(x1, v1, x2, v2 int) bool {
@@ -17,9 +16,9 @@ func kangarooStep(x1, v1, x2, v2 int) bool {
 	return false
 }
 
-func Kangaroo(getInput utils.GetInput) {
+func Kangaroo() {
 	var x1, x2, v1, v2 int
-	input := getInput()
+	input := os.Stdin
 	fmt.Fscanf(input, "%v %v", &x1, &v1)
 	fmt.Fscanf(input, "%v %v", &x2, &v2)
 	if kangarooStep(x1, v1, x2, v2) {
