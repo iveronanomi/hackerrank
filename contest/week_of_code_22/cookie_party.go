@@ -8,16 +8,15 @@ import (
 )
 
 func CookieParty(getInput utils.GetInput) {
-	var t [2]float64
-	var d float64
+	var p, c, d float64
 	input := getInput()
-	fmt.Fscanf(input, "%f %f", &t[0], &t[1])
-	if t[0] == 0 {
+	fmt.Fscanf(input, "%f %f", &p, &c)
+	if p == 0 {
 		d = 0
-	} else if t[0] > t[1] {
-		d = t[0] - t[1]
-	} else if t[0] < t[1] {
-		d = t[0]*math.Ceil(t[1]/t[0]) - t[1]
+	} else if p > c {
+		d = p - c
+	} else if p < c {
+		d = p*math.Ceil(c/p) - c
 	} else {
 		d = 0
 	}
