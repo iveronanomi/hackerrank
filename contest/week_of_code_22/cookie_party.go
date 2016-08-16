@@ -3,12 +3,11 @@ package week_of_code_22
 import (
 	"fmt"
 	"math"
-	"os"
 )
 
 func CookieParty() {
 	var p, c, d float64
-	fmt.Fscanf(os.Stdin, "%f %f", &p, &c)
+	fmt.Scanf("%f %f", &p, &c)
 	if p == 0 {
 		d = 0
 	} else if p > c {
