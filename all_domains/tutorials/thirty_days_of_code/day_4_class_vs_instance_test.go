@@ -22,6 +22,6 @@ func (s *Day4ClassVsInstanceSuite) TestCase1(c *C) {
 			"You are a teenager.\n"+
 			"You are old.\n\n"+
 			"You are old.\n"+
-			"You are old.\n",
+			"You are old.\n\n",
 	)
 }
