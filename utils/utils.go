@@ -7,18 +7,17 @@ import (
 	"os"
 )
 
-func CaptureOut(f func(), inputData string) string {
+func Capture(execute func(), inputData string) string {
 	//Create input, and write into it
-	in := writeInput(inputData)
-	os.Stdin = in
+	os.Stdin = setData(inputData)
 	oldStdout := os.Stdout
 	r, w, _ := os.Pipe()
 	os.Stdout = w
 
 	//Execute function with passed input
-	f()
+	execute()
 
-	in.Close()
+	os.Stdin.Close()
 	w.Close()
 	os.Stdout = oldStdout
 	var buf bytes.Buffer
@@ -26,20 +25,16 @@ func CaptureOut(f func(), inputData string) string {
 	return buf.String()
 }
 
-func writeInput(data string) *os.File {
-	in, err := ioutil.TempFile("", "")
-	if err != nil {
+func setData(data string) (f *os.File) {
+	var err error
+	if f, err = ioutil.TempFile("", ""); err != nil {
 		panic(err)
 	}
-
-	_, err = io.WriteString(in, data)
-	if err != nil {
+	if _, err = io.WriteString(f, data); err != nil {
 		panic(err)
 	}
-
-	_, err = in.Seek(0, os.SEEK_SET)
-	if err != nil {
+	if _, err = f.Seek(0, io.SeekStart); err != nil {
 		panic(err)
 	}
-	return in
+	return f
 }

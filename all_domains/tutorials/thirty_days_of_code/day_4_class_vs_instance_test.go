@@ -11,7 +11,7 @@ type Day4ClassVsInstanceSuite struct{}
 var _ = Suite(&Day4ClassVsInstanceSuite{})
 
 func (s *Day4ClassVsInstanceSuite) TestCase1(c *C) {
-	out := utils.CaptureOut(Day4ClassVsInstance, "4\n-1\n10\n16\n18")
+	out := utils.Capture(Day4ClassVsInstance, "4\n-1\n10\n16\n18")
 
 	c.Assert(out, Equals,
 		"Age is not valid, setting age to 0.\n"+

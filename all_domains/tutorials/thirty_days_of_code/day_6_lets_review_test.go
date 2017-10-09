@@ -11,7 +11,7 @@ type Day6LetsReviewSuite struct{}
 var _ = Suite(&Day6LetsReviewSuite{})
 
 func (s *Day6LetsReviewSuite) TestCase1(c *C) {
-	out := utils.CaptureOut(Day6LetsReview, "2\nHacker\nRank")
+	out := utils.Capture(Day6LetsReview, "2\nHacker\nRank")
 
 	c.Assert(out, Equals, "Hce akr\nRn ak\n")
 }

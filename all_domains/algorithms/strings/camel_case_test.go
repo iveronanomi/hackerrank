@@ -11,7 +11,7 @@ type CamelCaseSuite struct{}
 var _ = Suite(&CamelCaseSuite{})
 
 func (s *CamelCaseSuite) TestCase1(c *C) {
-	out := utils.CaptureOut(CamelCase, "saveChangesInTheEditor")
+	out := utils.Capture(CamelCase, "saveChangesInTheEditor")
 
 	c.Assert(out, Equals, "5\n")
 }

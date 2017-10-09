@@ -28,7 +28,7 @@ func (s *CookiePartySuite) TestCases(c *C) {
 	}
 
 	for _, t := range testCases {
-		out := utils.CaptureOut(CookieParty, fmt.Sprintf("%d %d", t[0], t[1]))
+		out := utils.Capture(CookieParty, fmt.Sprintf("%d %d", t[0], t[1]))
 
 		c.Assert(out, Equals, fmt.Sprintf("%d\n", t[2]))
 		//c.Logf("Guests: %d, Cookies: %d, Expected: %d = Got: %s", t[0], t[1], t[2], out)

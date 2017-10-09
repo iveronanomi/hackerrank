@@ -11,7 +11,7 @@ type Day9RecursionSuite struct{}
 var _ = Suite(&Day9RecursionSuite{})
 
 func (s *Day9RecursionSuite) TestCase1(c *C) {
-	out := utils.CaptureOut(Recursion, "3")
+	out := utils.Capture(Recursion, "3")
 
 	c.Assert(out, Equals, "6")
 }

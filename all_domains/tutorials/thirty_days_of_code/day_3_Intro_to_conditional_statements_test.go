@@ -11,13 +11,13 @@ type Day3IntroTtoConditionalStatementsSuite struct{}
 var _ = Suite(&Day3IntroTtoConditionalStatementsSuite{})
 
 func (s *Day3IntroTtoConditionalStatementsSuite) TestCase1(c *C) {
-	out := utils.CaptureOut(Day3IntroTtoConditionalStatements, "3")
+	out := utils.Capture(Day3IntroTtoConditionalStatements, "3")
 
 	c.Assert(out, Equals, "Weird")
 }
 
 func (s *Day3IntroTtoConditionalStatementsSuite) TestCase2(c *C) {
-	out := utils.CaptureOut(Day3IntroTtoConditionalStatements, "24")
+	out := utils.Capture(Day3IntroTtoConditionalStatements, "24")
 
 	c.Assert(out, Equals, "Not Weird")
 }

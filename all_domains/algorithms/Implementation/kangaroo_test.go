@@ -11,13 +11,13 @@ type KangarooSuite struct{}
 var _ = Suite(&KangarooSuite{})
 
 func (s *KangarooSuite) TestCase1(c *C) {
-	out := utils.CaptureOut(Kangaroo, "0 3 4 2")
+	out := utils.Capture(Kangaroo, "0 3 4 2")
 
 	c.Assert(out, Equals, "YES\n")
 }
 
 func (s *KangarooSuite) TestCase2(c *C) {
-	out := utils.CaptureOut(Kangaroo, "0 2 5 3")
+	out := utils.Capture(Kangaroo, "0 2 5 3")
 
 	c.Assert(out, Equals, "NO\n")
 }
