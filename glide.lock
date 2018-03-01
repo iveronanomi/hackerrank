@@ -1,0 +1,10 @@
+hash: 49a6fd8a93a654f392922f3aa970672df9a2b2e4885accd7124a3e08549d40b9
+updated: 2018-03-01T18:35:10.154446288+03:00
+imports: []
+testImports:
+- name: github.com/ereminIvan/hackerrank
+  version: 5b65a052dc8f4184ac642f82f946034be6e9ba65
+  subpackages:
+  - utils
+- name: gopkg.in/check.v1
+  version: 20d25e2804050c1cd24a7eea1e7a6447dd0e74ec

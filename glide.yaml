@@ -1,0 +1,7 @@
+package: github.com/iveronanomi/hackerrank
+import: []
+testImport:
+- package: github.com/ereminIvan/hackerrank
+  subpackages:
+  - utils
+- package: gopkg.in/check.v1
