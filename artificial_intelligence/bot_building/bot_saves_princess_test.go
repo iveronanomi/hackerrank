@@ -1,9 +1,8 @@
 package bot_building
 
 import (
+	"github.com/iveronanomi/hackerrank/utils"
 	. "gopkg.in/check.v1"
-
-	"github.com/ereminIvan/hackerrank/utils"
 )
 
 type BotSavesPrincessSuite struct{}
