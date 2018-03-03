@@ -7,11 +7,11 @@ import (
 )
 
 func BotSavesPrincess2() {
-	var n int
+	var n, x, y int
 	var v string
-	var start, finish [2]int
+	var finish [2]int
 	fmt.Scanf("%d", &n)
-	fmt.Scanf("%d %d", &start[1], &start[0])
+	fmt.Scanf("%d %d", &y, &x)
 	for i := 0; i < n; i++ {
 		fmt.Scanf("%v", &v)
 		if idx := strings.Index(v, "p"); idx >= 0 {
@@ -19,7 +19,7 @@ func BotSavesPrincess2() {
 			break
 		}
 	}
-	fmt.Println(nextMove(start, finish, n))
+	fmt.Println(nextMove([2]int{x, y}, finish, n))
 
 }
 

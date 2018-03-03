@@ -3,7 +3,7 @@ package implementation
 import (
 	. "gopkg.in/check.v1"
 
-	"github.com/ereminIvan/hackerrank/utils"
+	"github.com/iveronanomi/hackerrank/utils"
 )
 
 type DivisibleSumPairsSuite struct{}
