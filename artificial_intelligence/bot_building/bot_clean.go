@@ -34,28 +34,16 @@ func next(current [2]int, list [][2]int) string {
 	if current == closest {
 		return "CLEAN"
 	}
-	if current[0] < closest[0] && current[1] == closest[1] {
+	if current[0] < closest[0] && current[1] <= closest[1] {
 		return "RIGHT"
 	}
-	if current[0] > closest[0] && current[1] == closest[1] {
+	if current[0] > closest[0] && current[1] >= closest[1] {
 		return "LEFT"
 	}
-	if current[0] == closest[0] && current[1] < closest[1] {
+	if current[0] >= closest[0] && current[1] < closest[1] {
 		return "DOWN"
 	}
-	if current[0] == closest[0] && current[1] > closest[1] {
-		return "UP"
-	}
-	if current[0] < closest[0] && current[1] < closest[1] {
-		return "RIGHT"
-	}
-	if current[0] > closest[0] && current[1] > closest[1] {
-		return "LEFT"
-	}
-	if current[0] > closest[0] && current[1] < closest[1] {
-		return "DOWN"
-	}
-	if current[0] < closest[0] && current[1] > closest[1] {
+	if current[0] <= closest[0] && current[1] > closest[1] {
 		return "UP"
 	}
 	return "WHOOPS"

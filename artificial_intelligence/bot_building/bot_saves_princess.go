@@ -30,7 +30,7 @@ func BotSavesPrincess() {
 func find(start, finish [2]int, n int) []string {
 	queue := &Queue{}
 	queue.Push(start)
-	path := map[[2]int][2]int{start:[2]int{-1,-1}}
+	path := map[[2]int][2]int{start:{-1,-1}}
 
 	for queue.Len() > 0 {
 		current := queue.Pop()
@@ -50,7 +50,7 @@ func find(start, finish [2]int, n int) []string {
 
 func reconstruct(cameFrom map[[2]int][2]int, start, finish [2]int) [][2]int{
 	current := finish
-	path := [][2]int{}
+	var path [][2]int
 
 	for current != start {
 		path = append(path, current)
@@ -66,10 +66,10 @@ func reconstruct(cameFrom map[[2]int][2]int, start, finish [2]int) [][2]int{
 
 func neigh(point [2]int, n int) [][2]int {
 	neighbours := [][2]int{
-		[2]int{point[0], point[1] - 1},
-		[2]int{point[0] + 1, point[1]},
-		[2]int{point[0], point[1] + 1},
-		[2]int{point[0] - 1, point[1]},
+		{point[0], point[1] - 1},
+		{point[0] + 1, point[1]},
+		{point[0], point[1] + 1},
+		{point[0] - 1, point[1]},
 	}
 	var result [][2]int
 	for _, v := range neighbours {

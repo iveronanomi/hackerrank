@@ -28,10 +28,10 @@ func nextMove(start, finish [2]int, n int) string {
 	bestMove := ""
 
 	moves := map[string][2]int{
-		"LEFT":  [2]int{start[0] - 1, start[1]},
-		"RIGHT": [2]int{start[0] + 1, start[1]},
-		"UP":    [2]int{start[0], start[1] - 1},
-		"DOWN":  [2]int{start[0], start[1] + 1},
+		"LEFT":  {start[0] - 1, start[1]},
+		"RIGHT": {start[0] + 1, start[1]},
+		"UP":    {start[0], start[1] - 1},
+		"DOWN":  {start[0], start[1] + 1},
 	}
 
 	for move, point := range moves {
