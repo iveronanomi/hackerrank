@@ -10,7 +10,7 @@ type StacksBalancedBracketsSuite struct{}
 
 var _ = Suite(&StacksBalancedBracketsSuite{})
 
-func (s *TreesIsThisABinarySearchTreeSuite) TestStacksBalancedBrackets_Case1(c *C) {
+func (s *StacksBalancedBracketsSuite) TestStacksBalancedBrackets_Case1(c *C) {
 	out := utils.Capture(StacksBalancedBrackets, "3\n{[()]}\n{[(])}\n{{[[(())]]}}")
 
 	c.Assert(out, Equals, "YES\nNO\nYES\n")
